@@ -6,21 +6,40 @@
     <title>My Scripts</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 <body>
-    <nav>
-        <div class="nav-buttons">
-            <button onclick="window.location.href='index.html'">Home</button>
-            <button onclick="window.location.href='https://discord.com'">Discord</button>
+    <div class="editor-container">
+        <div class="sidebar">
+            <h2>My Scripts</h2>
+            <ul>
+                <li><a href="#" onclick="loadScript('scripts/scripts.lua', 'Script 1 - Cool Exploit'); return false;">Script 1 - Cool Exploit</a></li>
+                <!-- Add more scripts here -->
+            </ul>
         </div>
-    </nav>
-
-    <div class="container">
-        <h1>My Scripts</h1>
-        <ul>
-            <li><a href="scripts/scripts.lua" target="_blank">Script 1 - Cool Exploit</a></li>
-            <!-- Add more scripts here -->
-        </ul>
+        <div class="code-viewer">
+            <h2 id="script-title">Select a script to view</h2>
+            <pre><code id="script-content" class="lua"></code></pre>
+        </div>
     </div>
+
+    <script>
+        async function loadScript(url, title) {
+            try {
+                const response = await fetch(url);
+                const scriptContent = await response.text();
+                document.getElementById('script-title').textContent = title;
+                const codeElement = document.getElementById('script-content');
+                codeElement.textContent = scriptContent;
+                hljs.highlightElement(codeElement); // Re-highlight the code
+            } catch (error) {
+                console.error('Error loading script:', error);
+                document.getElementById('script-content').textContent = 'Error loading script.';
+            }
+        }
+    </script>
 </body>
 </html>
