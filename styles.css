@@ -1,50 +1,50 @@
 body {
-    background: url('aigeneratedbackground.jpg') no-repeat center center fixed;
-    background-size: cover; /* Ensure the background covers the entire page */
+    background: linear-gradient(135deg, #0d1a26 0%, #1e2a44 50%, #2a1e44 100%);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
     font-family: 'Arial', sans-serif;
     margin: 0;
-    color: #e0e7ff; /* Light text for contrast */
+    color: #e0e7ff;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Main Container (index.html) */
 .container {
     text-align: center;
-    background: rgba(20, 30, 48, 0.9); /* Dark, semi-transparent container */
+    background: rgba(20, 30, 48, 0.9);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(147, 112, 219, 0.5); /* Twilight purple glow */
-    border: 1px solid rgba(147, 112, 219, 0.3); /* Subtle purple border */
+    box-shadow: 0 0 20px rgba(147, 112, 219, 0.5);
+    border: 1px solid rgba(147, 112, 219, 0.3);
 }
 
 h1 {
     font-size: 3.5em;
     margin: 0;
-    text-shadow: 0 0 15px #00d4ff, 0 0 25px #9370db; /* Cyan and purple glow */
-    color: #e0e7ff; /* Light text */
-    font-family: 'Montserrat', sans-serif; /* Modern font */
+    text-shadow: 0 0 15px #00d4ff, 0 0 25px #9370db;
+    color: #e0e7ff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 p {
     font-size: 1.2em;
     margin: 20px 0;
-    color: #d1d5db; /* Softer gray for secondary text */
+    color: #d1d5db;
 }
 
 p a {
-    color: #00d4ff; /* Cyan for links */
+    color: #00d4ff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 p a:hover {
-    color: #ff69b4; /* Pink on hover */
+    color: #ff69b4;
 }
 
-/* Editor Container (scripts.html) */
 .editor-container {
     display: flex;
     width: 90%;
@@ -57,7 +57,6 @@ p a:hover {
     overflow: hidden;
 }
 
-/* Sidebar (list of scripts) */
 .sidebar {
     width: 30%;
     background: rgba(10, 20, 38, 0.95);
@@ -93,17 +92,40 @@ p a:hover {
     color: #00d4ff;
 }
 
-/* Code Viewer */
 .code-viewer {
     width: 70%;
     padding: 20px;
     overflow-y: auto;
 }
 
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .code-viewer h2 {
     font-size: 2em;
-    margin: 0 0 20px;
+    margin: 0;
     text-shadow: 0 0 10px #1e90ff;
+}
+
+.raw-button {
+    background: linear-gradient(45deg, #1e90ff, #ff69b4);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.raw-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
 }
 
 .code-viewer pre {
