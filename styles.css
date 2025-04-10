@@ -1,45 +1,53 @@
 body {
-    background: linear-gradient(135deg, #1e1e2f, #3b3b6b);
-    font-family: Arial, sans-serif;
+    background: #0d1a26; /* Dark blue-black for twilight vibe */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); /* Subtle grid */
+    background-size: 20px 20px; /* Grid size */
+    font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    color: #e0e7ff; /* Light text for contrast */
 }
 
 .container {
     text-align: center;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(20, 30, 48, 0.9); /* Dark, semi-transparent container */
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(147, 112, 219, 0.5); /* Twilight purple glow */
+    border: 1px solid rgba(147, 112, 219, 0.3); /* Subtle purple border */
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     margin: 0;
-    text-shadow: 0 0 10px #00ffff;
+    text-shadow: 0 0 15px #00d4ff, 0 0 25px #9370db; /* Cyan and purple glow */
+    color: #e0e7ff; /* Light text */
+    font-family: 'Montserrat', sans-serif; /* Modern font */
 }
 
 p {
     font-size: 1.2em;
     margin: 20px 0;
+    color: #d1d5db; /* Softer gray for secondary text */
 }
 
 button {
-    background: #00ffff;
+    background: linear-gradient(45deg, #00d4ff, #9370db); /* Twilight gradient: cyan to purple */
     border: none;
     padding: 15px 30px;
     font-size: 1.2em;
-    color: #1e1e2f;
+    color: #fff;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(147, 112, 219, 0.7); /* Purple glow */
 }
 
 button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px #00ffff;
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9); /* Brighter cyan glow on hover */
 }
