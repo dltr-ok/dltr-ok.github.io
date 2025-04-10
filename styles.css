@@ -1,44 +1,16 @@
 body {
-    background: #0d1a26; /* Dark blue-black for twilight vibe */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); /* Subtle grid */
-    background-size: 20px 20px; /* Grid size */
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensure the background covers the entire page */
     font-family: 'Arial', sans-serif;
     margin: 0;
     color: #e0e7ff; /* Light text for contrast */
-    min-height: 100vh; /* Ensure full height */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-/* Navigation Bar */
-nav {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000; /* Ensure it stays on top */
-}
-
-.nav-buttons button {
-    margin-left: 10px;
-    background: linear-gradient(45deg, #1e90ff, #ff69b4); /* Twilight gradient: blue to pink */
-    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5); /* Pink glow */
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.nav-buttons button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 105, 180, 0.8); /* Brighter pink glow */
-}
-
-/* Main Container */
+/* Main Container (index.html) */
 .container {
     text-align: center;
     background: rgba(20, 30, 48, 0.9); /* Dark, semi-transparent container */
@@ -46,7 +18,6 @@ nav {
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(147, 112, 219, 0.5); /* Twilight purple glow */
     border: 1px solid rgba(147, 112, 219, 0.3); /* Subtle purple border */
-    margin-top: 100px; /* Space for the nav bar */
 }
 
 h1 {
@@ -63,54 +34,88 @@ p {
     color: #d1d5db; /* Softer gray for secondary text */
 }
 
-/* Features Section */
-.features {
-    text-align: center;
-    margin: 50px 20px;
-    color: #e0e7ff;
-    width: 100%;
-    max-width: 1200px; /* Limit width for better layout */
+p a {
+    color: #00d4ff; /* Cyan for links */
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.features h2 {
-    font-size: 2.5em;
-    text-shadow: 0 0 15px #1e90ff; /* Blue glow */
+p a:hover {
+    color: #ff69b4; /* Pink on hover */
 }
 
-.features p {
-    font-size: 1.1em;
-    color: #d1d5db;
-}
-
-.feature-cards {
+/* Editor Container (scripts.html) */
+.editor-container {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
-}
-
-.card {
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
     background: rgba(20, 30, 48, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(147, 112, 219, 0.5);
+    border: 1px solid rgba(147, 112, 219, 0.3);
+    overflow: hidden;
+}
+
+/* Sidebar (list of scripts) */
+.sidebar {
+    width: 30%;
+    background: rgba(10, 20, 38, 0.95);
     padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    box-shadow: 0 0 15px rgba(147, 112, 219, 0.3); /* Purple glow */
-    border: 1px solid rgba(147, 112, 219, 0.2);
+    border-right: 1px solid rgba(147, 112, 219, 0.3);
+    overflow-y: auto;
 }
 
-.card h3 {
-    font-size: 1.5em;
-    margin: 0 0 10px;
-    color: #00d4ff; /* Cyan for headings */
+.sidebar h2 {
+    font-size: 2em;
+    margin: 0 0 20px;
+    text-shadow: 0 0 10px #1e90ff;
 }
 
-.card p {
-    font-size: 1em;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
-/* Remove the button styles from the main container since we moved it to the nav */
-.container button {
-    display: none; /* Remove the "My Scripts" button from the container */
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #00d4ff;
+}
+
+/* Code Viewer */
+.code-viewer {
+    width: 70%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.code-viewer h2 {
+    font-size: 2em;
+    margin: 0 0 20px;
+    text-shadow: 0 0 10px #1e90ff;
+}
+
+.code-viewer pre {
+    background: #1e2a44;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(147, 112, 219, 0.3);
+    box-shadow: 0 0 10px rgba(147, 112, 219, 0.2);
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.code-viewer code {
+    font-family: 'Courier New', Courier, monospace;
 }
